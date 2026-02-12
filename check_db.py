@@ -1,0 +1,10 @@
+import sqlite3
+conn = sqlite3.connect("users.db")
+c = conn.cursor()
+print("SCHEMA:")
+c.execute("PRAGMA table_info(users)")
+print(c.fetchall())
+print("ROWS:")
+c.execute("SELECT * FROM users")
+print(c.fetchall())
+conn.close()
